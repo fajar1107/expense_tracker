@@ -1,0 +1,24 @@
+<!-- registration/login.html -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Login</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <center>
+        <div class="login-form">
+            <h1>User Login</h1>
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="reglog-btn">Login</button>
+            </form>
+        </div>
+    </center>
+</body>
+</html>
+

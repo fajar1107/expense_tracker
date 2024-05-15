@@ -1,0 +1,208 @@
+.board{
+    background-color: #6420AA;
+    width: 60%;
+    height: 100%;
+    margin-top: 180px;
+    padding-bottom: 50px;
+    border-radius: 25px;
+    box-shadow: 10px 10px 20px 10px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.board h1{
+    padding-top: 20px;
+    color: #BEADFA;
+    font-family: sans-serif;
+}
+
+/* -----------------------------ACTIONS------------------------------ */
+.actions{
+    display: none;
+}
+.actions a{
+    background-color: #944539;
+    color: #dfa67b;
+    font-size: 20px;
+    text-decoration: none;
+    border: solid;
+    border-radius: 5px;
+    padding: 2px;
+}
+
+/* -----------------------------BUTTONS------------------------------ */
+.table-btns {
+    background-color: #6420AA;
+    border: solid;
+    border-color: white;
+    position: absolute;
+    top: 160px;
+    right: 320px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif;
+}
+
+.add-btn{
+    background-color: #392467;
+    width: 130px;
+    height: 50px;
+    border-style: solid;
+    border-color: white;
+    margin: 5px;
+}
+.add-btn:hover{
+    background-color: #BEADFA;
+}
+.add-btn a{
+    font-size: 20px;
+    text-decoration: none;
+    color: white;
+}
+.add-btn a:hover{
+    color: #392467;
+}
+
+.edit-btn{
+    background-color: #392467;
+    width: 130px;
+    height: 50px;
+    border-style: solid;
+    border-color: white;
+    font-size: 20px;
+    color: white;
+    margin: 5px;
+    cursor: pointer;
+}
+.edit-btn:hover{
+    background-color: #BEADFA;
+    color: #392467;
+}
+
+.download-btn {
+    width: 130px;
+    height: 50px;
+    background-color: #392467;
+    border: solid;
+    border-color: red;
+    margin: 5px;
+}
+.download-btn:hover{
+    background-color: #BEADFA;
+}
+.download-btn a{
+    color: white;
+    text-decoration: none;
+}
+.download-btn a:hover{
+    color: #392467;
+}
+
+/* -----------------------------FILTER------------------------------ */
+.filter{
+    position: absolute;
+    top: 160px;
+    left: 320px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #6420AA;
+    width: 420px;
+    height: 60px;
+    border: solid;
+    border-color: white;
+}
+.filter-btn{
+    cursor: pointer;
+    font-size: 20px;
+    color: white;
+    background-color: #392467;
+    font-family: sans-serif;
+    border: solid;
+    border-color: white;
+    margin: 5px;
+}
+.filter-btn:hover{
+    background-color: #BEADFA;
+    color: #392467;
+}
+
+.month-btn, .year-btn{
+    background-color: #392467;
+    width: 130px;
+    height: 50px;
+    border-color: #BEADFA;
+    align-items: center;
+    margin: 5px;
+    border: solid;
+    border-color: white;
+}
+.month-btn a{
+    font-size: 20px;
+    text-decoration: none;
+    color: white;
+}
+
+/* -----------------------------TABLE------------------------------ */
+table{
+    background-color: white;
+    border-collapse: collapse;
+    border-top-left-radius: 27px;
+    border-top-right-radius: 27px;
+    font-family: sans-serif;
+}
+
+th{
+    padding: 10px;
+    font-size: 20px;
+    color: #6420AA;
+}
+td{
+    text-align: center;
+}
+table td{
+    border: 1px solid;
+    border-color: #BEADFA;
+    color: #6420AA;
+    font-size: 20px;
+}
+table tr td:nth-child(1){
+    width: 130px;
+}
+table tr td:nth-child(2){
+    width: 150px;
+    color: #BEADFA;
+}
+table tr td:nth-child(3){
+    width: 280px;
+}
+table tr td:nth-child(4){
+    width: 70px;
+    color: #00a86b;
+}
+table tr td:nth-child(5){
+    width: 70px;
+    color: #fd3c4a;
+}
+
+/* -----------------------------TOTAL INCOME/EXPENSE------------------------------ */
+.total-income{
+    position: absolute;
+    top: 90px;
+    left: 545px;
+    background-color: #00a86b;
+}
+.total-expense{
+    position: absolute;
+    top: 90px;
+    right: 545px;
+    background-color: #fd3c4a;
+}
+.total-income, .total-expense{
+    width: 200px;
+    height: 50px;
+    padding: 3px;
+    border-radius: 25px;
+    box-shadow: 10px 10px 20px 10px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    color: white;
+    font-size: 15px;
+    font-family: sans-serif;
+}

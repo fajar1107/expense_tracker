@@ -1,0 +1,19 @@
+<!-- statement_form.html -->
+{% extends 'layout.html' %}
+{% load static %}
+{% block extrahead %}
+  <link rel="stylesheet" href="{% static 'statement_form.css' %}">
+{% endblock extrahead %}
+
+{% block content %}
+<center>
+    <div class="statement-form">
+        <h2>Select Dates for Statement</h2>
+        <form method="post" action="{% url 'download_statement' %}">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="submit-btn">Download</button>
+        </form>
+    </div>
+</center>
+{% endblock %}

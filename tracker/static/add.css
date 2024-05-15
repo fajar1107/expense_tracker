@@ -1,0 +1,26 @@
+.add-form{
+    background-color: #6420AA;
+    width: 60%;
+    padding: 20px 0 20px 0;
+    color: white;
+    font-size: 20px;
+    border: solid;
+    border-color: white;
+    border-radius: 10px;
+    margin-top: 95px;
+    font-family: sans-serif;
+}
+
+h2{
+    color: white;
+}
+
+.submit-btn{
+    font-size: 20px;
+    margin: 5px;
+    background-color: #392467;
+    border: solid;
+    border-color: white;
+    color: white;
+    cursor: pointer;
+}

@@ -1,0 +1,22 @@
+<!-- edit.html -->
+{% extends 'layout.html' %}
+{% load static %}
+{% block extrahead %}
+    <link rel="stylesheet" href="{% static 'edit.css' %}">
+{% endblock extrahead %}
+
+{% block content %}
+<center>
+    <div class="edit-form">
+        <h1>Edit Entry</h1>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Save Changes" class="submit-btn">
+        </form>
+    </div>
+</center>
+
+{% endblock content %}
+    
+

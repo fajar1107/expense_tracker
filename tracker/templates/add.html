@@ -1,0 +1,19 @@
+<!-- add.html -->
+{% extends 'layout.html' %}
+{% load static %}
+{% block extrahead %}
+  <link rel="stylesheet" href="{% static 'add.css' %}">
+{% endblock extrahead %}
+
+{% block content %}
+<center>
+  <div class="add-form">
+    <h2>Add Entry</h2>
+    <form method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit" class="submit-btn">Submit</button>
+    </form>
+  </div>
+</center>
+{% endblock %}

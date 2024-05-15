@@ -1,0 +1,29 @@
+.delete-form{
+    background-color: #944539;
+    width: 60%;
+    padding: 20px 0 20px 0;
+    color: white;
+    font-size: 20px;
+    border: solid;
+    border-color: white;
+    border-radius: 10px;
+    margin-top: 95px;
+}
+
+h2, p{
+    color: white;
+}
+
+.delete-btn, .cancel-btn{
+    font-size: 20px;
+    margin: 5px;
+    background-color: #dfa67b;
+    border: solid;
+    border-color: black;
+    cursor: pointer;
+}
+
+.cancel-btn a{
+    color: black;
+    text-decoration: none;
+}

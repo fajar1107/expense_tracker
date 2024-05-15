@@ -1,0 +1,21 @@
+<!-- delete.html -->
+
+{% extends 'layout.html' %}
+{% load static %}
+{% block extrahead %}
+  <link rel="stylesheet" href="{% static 'delete.css' %}">
+{% endblock extrahead %}
+
+{% block content %}
+<center>
+  <div class="delete-form">
+    <h2>Delete Entry</h2>
+    <p>Are you sure you want to delete this entry?</p>
+    <form action="{% url 'delete' entry.pk %}" method="post">
+        {% csrf_token %}
+        <input type="submit" value="Delete" class="delete-btn">
+        <button class="cancel-btn"><a href="{% url 'table' %}">Cancel</a></button>
+    </form>
+  </div>
+</center>
+{% endblock %}

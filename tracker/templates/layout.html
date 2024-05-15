@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense tracker</title>
+    <link rel="stylesheet" href="{% static 'layout.css' %}">
+    {% block extrahead %}
+    {% endblock extrahead %}
+</head>
+<body>
+    <header>
+        <center>
+            <nav>
+                <div class="header-container">
+                    <ul class="nav-links">
+                        <li><a href="{% url 'home' %}">Home</a></li>
+                        <li><a href="{% url 'table' %}">Transactions</a></li>
+                        <li><a href="{% url 'index' %}">Logout</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </center>
+    </header>
+    {% block content %}
+    {% endblock content %}
+</body>
+</html>

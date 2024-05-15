@@ -1,0 +1,106 @@
+<!-- table.html -->
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block extrahead %}
+  <link rel="stylesheet" href="{% static 'table.css' %}">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+  <script src="{% static 'script.js' %}"></script> <!-- Link to the JavaScript file -->
+  
+{% endblock extrahead %}
+
+{% block content %}
+<center>
+  <div class="totals">
+    <div class="total-income">
+      <h3>Total Income : {{ total_income }}</h3>
+    </div>
+    <div class="total-expense">
+      <h3>Total Expense : {{ total_expense }}</h3>
+    </div>
+  </div>
+  <div class="board">
+    <h1>Tracker Table</h1>
+    <div class="table-btns">
+      <button class="add-btn"><a href="{% url 'add' %}">Add entry</a></button>
+      <button class="edit-btn" onclick="toggleEditButton()">Edit table</button>
+      <button class="download-btn"><a href="{% url 'statement_form' %}">Download statement</a></button>
+    </div>
+    
+    <div class="filter">
+      <!-- Dropdowns for selecting month and year -->
+      <button class="month-btn">
+        <select name="month" id="month">
+          <option selected disabled>Select month</option>
+          <option value="01">January</option>
+          <option value="02">February</option>
+          <option value="03">March</option>
+          <option value="04">April</option>
+          <option value="05">May</option>
+          <option value="06">June</option>
+          <option value="07">July</option>
+          <option value="08">August</option>
+          <option value="09">September</option>
+          <option value="10">October</option>
+          <option value="11">November</option>
+          <option value="12">December</option>
+        </select>
+      </button>
+      <button class="year-btn">
+        <select name="year" id="year">
+          <option selected disabled>Select year</option>
+          <script>
+            // Get the select element
+            var selectYear = document.getElementById("year");
+        
+            // Get the current year
+            var currentYear = new Date().getFullYear();
+        
+            // Generate options for the last 10 years (adjust this number as needed)
+            for (var i = currentYear; i >= currentYear - 10; i--) {
+              var option = document.createElement("option");
+              option.text = i;
+              option.value = i;
+              selectYear.appendChild(option);
+            }
+        
+            // Move the select element out of the button
+            var button = document.querySelector(".year-btn");
+            var select = document.getElementById("year");
+            button.appendChild(select);
+          </script>
+          <!-- Year options will be dynamically generated here -->
+        </select>
+      </button>
+      <!-- Filter and unfilter buttons -->
+      <button id="filter-btn" class="filter-btn" onclick="filterTable()">FILTER</button>
+      <button id="unfilter-btn" class="filter-btn" onclick="unfilterTable()" style="display: none;">UNFILTER</button>
+    </div>
+    <!-- Table -->
+    <table class="table">
+      <tr>
+        <th>DATE</th>
+        <th>ENTRY TYPE</th>
+        <th>DESCRIPTION</th>
+        <th>INCOME</th>
+        <th>EXPENSE</th>
+        <th class="actions">ACTIONS</th> <!-- Add a new column for actions -->
+      </tr>
+      {% for item in all_entries %}
+      <tr height="30px">
+        <td>{{ item.date }}</td>
+        <td>{{ item.get_entryType_display }}</td>
+        <td>{{ item.description }}</td>
+        <td>{% if item.entryType == 'income' %}{{ item.amount }}{% endif %}</td>
+        <td>{% if item.entryType == 'expense' %}{{ item.amount }}{% endif %}</td>
+        <!-- Edit and delete links for each entry -->
+        <td class="actions">
+          <a href="{% url 'edit' item.pk %}">Edit</a>
+          <a href="{% url 'delete' item.pk %}">Delete</a>
+        </td>
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+</center>
+{% endblock content %}
